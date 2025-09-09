@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}"/-->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">
+                <img src="/assets/image/eduwell.png"/>
+            </a>
+            <div class="links">
+                <ul>
+                    <li><a href="{{ url_for('routes.index') }}">Home</a></li>
+                    <li><a href="{{ url_for('routes.category') }}">Category</a></li>
+                    <li><a href="{{ url_for('routes.products') }}">Gallery</a></li>
+                    <li><a href="{{ url_for('routes.contact_us') }}">Add Products</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo & Social -->
+        <div class="footer-column logo-social">
+          <img src="/assets/image/eduwell.png" alt="Nexcent Logo" class="logo">
+          <p>Copyright © 2020 Nexcent ltd. <br>All rights reserved</p>
+          <div class="social-icons">
+            <img src="/assets/image/Social Icons(1).png" alt="Instagram">
+            <img src="/assets/image/Social Icons(2).png" alt="Dribbble">
+            <img src="/assets/image/Social Icons(3).png" alt="Twitter">
+            <img src="/assets/image/Social Icons.png" alt="YouTube">
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li>About us</li>
+            <li>Blog</li>
+            <li>Contact us</li>
+            <li>Pricing</li>
+            <li>Testimonials</li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li>Help center</li>
+            <li>Terms of service</li>
+            <li>Legal</li>
+            <li>Privacy policy</li>
+            <li>Status</li>
+          </ul>
+        </div>
+
+        <!-- Stay Updated -->
+        <div class="footer-column">
+          <h4>Stay up to date</h4>
+          <div class="subscribe-box">
+            <input type="email" placeholder="Your email address">
+            <button>
+              <img src="assets/image/send.png" alt="Send">
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!--script-- src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script-->
+</body>
+</html>

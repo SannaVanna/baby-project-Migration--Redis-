@@ -1,0 +1,27 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="POST" action="{{ url_for('routes.submit') }}" enctype="multipart/form-data">
+            <label>Product Name:</label><br>
+            <input type="text" name="name" placeholder="Product Name"><br>
+
+            <label>Price:</label><br>
+            <input type="number" name="price" placeholder="Price"><br>
+
+            <label>Stock:</label><br>
+            <input type="number" name="stock" placeholder="Stock"><br>
+
+            <label>Category:</label><br>
+            <select name="category">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label>Upload a file:</label><br>
+            <input type="file" name="image"><br>
+            <button class="btn" type="submit" value="Submit Product">Submit</button>
+        </form>
+    </div>
+{% endblock %}

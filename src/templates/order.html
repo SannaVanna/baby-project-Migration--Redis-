@@ -1,0 +1,32 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h1>Place Your Order</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <p>{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name"><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email"><br>
+
+        <label>Quantity:</label><br>
+        <input type="number" name="quantity"><br>
+
+        <label>Address:</label><br>
+        <input type="text" name="address"><br><br>
+
+        <button type="submit">place Order</button>
+    </form>
+</div>
+
+{% endblock %}

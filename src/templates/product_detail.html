@@ -1,0 +1,15 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>{{ product.name }}</h2>
+        <img src="{{ url_for('static', filename=product.image.split('assets/')[1]) }}" width="200">
+        <p>Price: ₦{{ product.price }}</p>
+        <p>Stock: {{ product.stock }}</p>
+        <p>Category: {{ product.category.name}}</p>
+        <a href="order/{{product['id']}}">
+            <button class="btn">Order!</button>
+        </a>
+    </div>
+
+{% endblock %}

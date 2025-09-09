@@ -1,0 +1,20 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+
+    <div class="hero">
+        <video autoplay muted loop id="bgVideo">
+            <source src="assets/image/baby-vd3.mp4" type="video/mp4">
+        </video> <!--use this only when you want to use a background video-->
+        <div class="hero-text">
+            <p>Welcome to Eduwell Baby's Store</p>
+            <h1>Best babies store & Online Shop</h1>
+            <h2>Give the gift of your children every day.</h2>
+            <a class="btn" href="{{ url_for('routes.products') }}" >Shop Now!</a>
+        </div>
+        <!--div class="hero-image">
+            <img src="assets/image/baby2.png"/>
+        </div-->
+    </div>
+
+{% endblock %}
